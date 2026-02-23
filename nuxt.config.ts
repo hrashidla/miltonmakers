@@ -6,14 +6,21 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Prismic + Nuxt Minimal Starter',
+      title: 'Milton Makers',
       htmlAttrs: { lang: 'en' },
       meta: [{ charset: 'utf-8' }],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }
   },
-
-  modules: ['@nuxt/eslint', '@nuxtjs/prismic'],
+  css: ['~/assets/css/main.css'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/prismic',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    //'@nuxt/icon',
+    //'nuxt-swiper',
+  ],
 
   prismic: {
     endpoint: apiEndpoint || repositoryName,

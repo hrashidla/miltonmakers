@@ -110,68 +110,59 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ToolDocumentDataSlicesSlice = RichTextSlice;
+export type AllDocumentTypes = PageDocument;
 
 /**
- * Content for Tool documents
+ * Primary content in *Hero → Default → Primary*
  */
-interface ToolDocumentData {
+export interface HeroSliceDefaultPrimary {
   /**
-   * Slice Zone field in *Tool*
+   * Heading field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: tool.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/slices
-   */
-  slices: prismic.SliceZone<ToolDocumentDataSlicesSlice>; /**
-   * Meta Title field in *Tool*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: tool.meta_title
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: hero.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  meta_title: prismic.KeyTextField;
+  heading: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Tool*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: tool.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Tool*
+   * Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: tool.meta_image
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: hero.default.primary.image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  meta_image: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
 }
 
 /**
- * Tool document from Prismic
+ * Default variation for Hero Slice
  *
- * - **API ID**: `tool`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ToolDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<ToolDocumentData>, "tool", Lang>;
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
 
-export type AllDocumentTypes = PageDocument | ToolDocument;
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
  * Primary content in *RichText → Default → Primary*
@@ -242,10 +233,11 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
-      ToolDocument,
-      ToolDocumentData,
-      ToolDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
