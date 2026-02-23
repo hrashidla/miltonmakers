@@ -5,21 +5,21 @@ body{
   /* font-family: "DM Sans", sans-serif; */
   /* background-image: url("/assets/noise-texture.jpg");  */
   /* background-size:500px; */
-  @apply bg-white bg-repeat text-black
+  @apply bg-white bg-repeat text-amber-900
 }
 
 .buttonLink{
   @apply relative inline-flex h-fit w-fit rounded-full px-4 py-2;
-  @apply border border-yellow-300 bg-yellow-900/10 text-yellow-300 outline-none ring-yellow-300;
-  @apply after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-yellow-200 after:bg-opacity-0 after:blur-md;
-  @apply transition-colors hover:border-yellow-400 hover:text-yellow-400 after:transition-all after:duration-100 after:hover:bg-opacity-15 focus:ring-2;
+  @apply border border-amber-900 bg-amber-900/10 text-amber-700 outline-none ring-amber-700;
+  @apply after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-amber-700 after:bg-opacity-0 after:blur-md;
+  @apply transition-colors hover:border-amber-700 hover:text-amber-700 after:transition-all after:duration-100 after:hover:bg-opacity-15 focus:ring-2;
 }
 header li a{
-  @apply  hover:text-yellow-300;
+  @apply  hover:text-amber-300 px-4;
 }
 
 header li a.router-link-active{
-  @apply text-yellow-300;
+  @apply text-amber-300;
 }
 
 h1{
