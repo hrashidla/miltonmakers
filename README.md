@@ -1,4 +1,4 @@
-# Prismic + Nuxt Minimal Starter by Harris Rashid
+# Prismic + Nuxt Minimal Starter by Harris Rashid, and Sean P.
 
 Want to quickly get started building your own project with [Prismic][prismic] and [Nuxt][nuxt]? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
 
