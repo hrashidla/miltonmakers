@@ -13,14 +13,14 @@ const isOpen = ref(false)
       aria-label="Main"
     >
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="z-50" @click="isOpen = false">
+        <NuxtLink to="/" class="z-40" @click="isOpen = false">
           <MMLogo />
           <span class="sr-only">{{ settings?.data.site_title }}Milton Makers</span>
         </NuxtLink>
 
         <button
           type="button"
-          class="block md:hidden p-2 text-3xl text-amber-900"
+          class="block md:hidden p-2 text-5xl text-amber-900"
           :aria-expanded="isOpen"
           @click="isOpen = true"
         > 
@@ -30,22 +30,22 @@ const isOpen = ref(false)
 
       <!-- Mobile Nav -->
       <div
-        class="md:hidden fixed inset-0 z-40 flex flex-col items-end bg-amber-800 pr-4 pt-6 transition-transform duration-300 ease-in-out"
+        class="md:hidden fixed inset-0 z-50 flex flex-col items-end bg-amber-800 pr-4 pt-6 transition-transform duration-300 ease-in-out"
         :class="isOpen ? 'translate-x-0' : 'translate-x-[100%]'"
       >
         <button
           :aria-expanded="isOpen"
           type="button"
-          class="block md:hidden p-2 text-3xl text-white"
+          class="block md:hidden p-2 text-5xl text-white"
           @click="isOpen = false"
         >
           <Icon name="ph:x-bold" />
         </button>
-        <ul class="grid justify-items-end gap-8">
+        <ul class="text-center w-full justify-items-center gap-8">
           <li v-for="link in settings?.data.navigation" :key="link.key">
             <PrismicLink
               :field="link"
-              class="block min-h-6 px-3 text-xl first:mt-8 text-white"
+              class="block min-h-6 px-3 text-3xl first:mt-8 text-white"
               :class="{ buttonLink: link.variant === 'Button' }"
               @click="isOpen = false"
             />
