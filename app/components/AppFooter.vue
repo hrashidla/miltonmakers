@@ -12,7 +12,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
       </div> -->
       <Bounded>
         <div class="lg:flex gap-x-16 z-10 relative pb-24">  
-          <div class="lg:w-1/2 lg:mb-0 pb-24 " v-gsap.whenVisible.from="{ opacity: 0, y: -32 }">
+          <div class="lg:w-1/2 lg:mb-0 pb-24 " v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
             <h2 class="mb-6 text-stone-600">Interested in 
               <span class="block mt-4 text-4xl lg:text-5xl text-white">Joining the Space?</span>
             </h2>

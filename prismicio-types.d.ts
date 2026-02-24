@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type PageDocumentDataSlicesSlice =
+  | ImageGridSlice
   | ThreeColumnsSlice
   | HeroSlice
   | RichTextSlice;
@@ -263,6 +264,102 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *ImageGrid → Default → Primary → Images*
+ */
+export interface ImageGridSliceDefaultPrimaryImagesItem {
+  /**
+   * Image field in *ImageGrid → Default → Primary → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_grid.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ImageGrid → Default → Primary*
+ */
+export interface ImageGridSliceDefaultPrimary {
+  /**
+   * Title field in *ImageGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_grid.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *ImageGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_grid.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  body: prismic.KeyTextField;
+
+  /**
+   * Images field in *ImageGrid → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_grid.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  images: prismic.GroupField<Simplify<ImageGridSliceDefaultPrimaryImagesItem>>;
+
+  /**
+   * CTA field in *ImageGrid → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_grid.default.primary.cta
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Link" | "Button"
+  >;
+}
+
+/**
+ * Default variation for ImageGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ImageGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageGrid*
+ */
+type ImageGridSliceVariation = ImageGridSliceDefault;
+
+/**
+ * ImageGrid Shared Slice
+ *
+ * - **API ID**: `image_grid`
+ * - **Description**: ImageGrid
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ImageGridSlice = prismic.SharedSlice<
+  "image_grid",
+  ImageGridSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -441,6 +538,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ImageGridSlice,
+      ImageGridSliceDefaultPrimaryImagesItem,
+      ImageGridSliceDefaultPrimary,
+      ImageGridSliceVariation,
+      ImageGridSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

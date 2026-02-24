@@ -16,7 +16,7 @@ defineProps(getSliceComponentProps<Content.ThreeColumnsSlice>());
       </div>
 
       <div class="lg:grid grid-cols-3 gap-8">
-        <div v-for="item in slice.primary.column" class=" bg-stone-100 text-stone-900 p-4 lg:p-8 border border-1 border-stone-450 rounded mb-8 lg:mb-0" v-gsap.whenVisible.from="{ opacity: 0, y: -32 }">
+        <div v-for="item in slice.primary.column" class=" bg-stone-100 text-stone-900 p-4 lg:p-8 border border-1 border-stone-450 rounded mb-8 lg:mb-0" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
           <!-- <pre>{{ item }}</pre> -->
           <h3 class="font-bold text-center">{{ item.column_title }}</h3>
           <div class="text-bold text-xl text-center mb-3">{{ item.pricing }}</div>

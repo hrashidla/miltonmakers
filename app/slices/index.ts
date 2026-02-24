@@ -5,6 +5,7 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
   hero: defineAsyncComponent(() => import("./Hero/index.vue")),
+  image_grid: defineAsyncComponent(() => import("./ImageGrid/index.vue")),
   rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
   three_columns: defineAsyncComponent(() => import("./ThreeColumns/index.vue")),
 });
