@@ -18,8 +18,9 @@ export default defineNuxtConfig({
     '@nuxtjs/prismic',
     '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
-    '@nuxt/icon',
     //'nuxt-swiper',
+    '@nuxt/icon',
+    'v-gsap-nuxt',
   ],
 
   prismic: {

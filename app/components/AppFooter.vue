@@ -12,7 +12,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
       </div> -->
       <Bounded>
         <div class="lg:flex gap-x-16 z-10 relative pb-24">  
-          <div class="lg:w-1/2 lg:mb-0 pb-24 ">
+          <div class="lg:w-1/2 lg:mb-0 pb-24 " v-gsap.whenVisible.from="{ opacity: 0, x: -32 }">
             <h2 class="mb-6 text-stone-600">Interested in 
               <span class="block mt-4 text-4xl lg:text-5xl text-white">Joining the Space?</span>
             </h2>
@@ -25,7 +25,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
               <div>stevemaybecampos@gmail.com</div> -->
             </div>
           </div>
-          <div class="lg:w-1/2">
+          <div class="lg:w-1/2" v-gsap.whenVisible.from="{ opacity: 0, x: 32 }">
           <form class="space-y-12" name="contact" method="POST" data-netlify="true" netlify>        
             <div>
               <label class="block text-sm font-medium text-stone-400">Your Name
@@ -61,7 +61,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
         aria-label="Footer"
       >
       <NuxtLink to="/">
-        <SFALogo />
+        <!-- <MMLogo /> -->
         <span class="sr-only">{{ settings?.data.site_title }} home page</span>
       </NuxtLink>
       <ul class="lg:flex gap-6 text-center lg:text-left">
