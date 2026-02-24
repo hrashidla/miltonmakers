@@ -69,7 +69,10 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | ThreeColumnsSlice
+  | HeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -212,14 +215,14 @@ export type AllDocumentTypes = PageDocument | SettingsDocument;
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Heading field in *Hero → Default → Primary*
+   * Title field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.heading
+   * - **API ID Path**: hero.default.primary.title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  heading: prismic.KeyTextField;
+  title: prismic.KeyTextField;
 
   /**
    * Image field in *Hero → Default → Primary*
@@ -304,6 +307,108 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *ThreeColumns → Default → Primary → Column*
+ */
+export interface ThreeColumnsSliceDefaultPrimaryColumnItem {
+  /**
+   * Column Title field in *ThreeColumns → Default → Primary → Column*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.column[].column_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  column_title: prismic.KeyTextField;
+
+  /**
+   * Pricing field in *ThreeColumns → Default → Primary → Column*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.column[].pricing
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  pricing: prismic.KeyTextField;
+
+  /**
+   * Column Content field in *ThreeColumns → Default → Primary → Column*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.column[].column_content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  column_content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ThreeColumns → Default → Primary*
+ */
+export interface ThreeColumnsSliceDefaultPrimary {
+  /**
+   * Title field in *ThreeColumns → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *ThreeColumns → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  body: prismic.KeyTextField;
+
+  /**
+   * Column field in *ThreeColumns → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_columns.default.primary.column[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  column: prismic.GroupField<
+    Simplify<ThreeColumnsSliceDefaultPrimaryColumnItem>
+  >;
+}
+
+/**
+ * Default variation for ThreeColumns Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ThreeColumnsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ThreeColumnsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ThreeColumns*
+ */
+type ThreeColumnsSliceVariation = ThreeColumnsSliceDefault;
+
+/**
+ * ThreeColumns Shared Slice
+ *
+ * - **API ID**: `three_columns`
+ * - **Description**: ThreeColumns
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ThreeColumnsSlice = prismic.SharedSlice<
+  "three_columns",
+  ThreeColumnsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -340,6 +445,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      ThreeColumnsSlice,
+      ThreeColumnsSliceDefaultPrimaryColumnItem,
+      ThreeColumnsSliceDefaultPrimary,
+      ThreeColumnsSliceVariation,
+      ThreeColumnsSliceDefault,
     };
   }
 }

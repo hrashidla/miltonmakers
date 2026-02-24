@@ -6,6 +6,7 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
 
 <template>
   <section>
+    {{ slice }}
     <PrismicRichText :field="slice.primary.content" />
   </section>
 </template>

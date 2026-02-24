@@ -1,0 +1,59 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "thread",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "FieldContent",
+				"value": "ourselves",
+				"type": "Text"
+			},
+			"column": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"column_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "stairs",
+									"type": "Text"
+								}
+							],
+							[
+								"column_content",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Minim duis ipsum veniam laboris dolore labore anim tempor nulla dolore anim id esse occaecat eu. Eiusmod do consequat ut mollit deserunt. Amet et consectetur eu sit deserunt labore eiusmod sit sunt."
+											}
+										}
+									]
+								}
+							],
+							[
+								"pricing",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "outline",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

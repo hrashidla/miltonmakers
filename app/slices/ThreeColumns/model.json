@@ -1,0 +1,65 @@
+{
+  "id": "three_columns",
+  "type": "SharedSlice",
+  "name": "ThreeColumns",
+  "description": "ThreeColumns",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "Text",
+          "config": {
+            "label": "Body",
+            "placeholder": ""
+          }
+        },
+        "column": {
+          "type": "Group",
+          "config": {
+            "label": "Column",
+            "repeat": true,
+            "fields": {
+              "column_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Column Title",
+                  "placeholder": ""
+                }
+              },
+              "pricing": {
+                "type": "Text",
+                "config": {
+                  "label": "Pricing",
+                  "placeholder": ""
+                }
+              },
+              "column_content": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Column Content",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -12,10 +12,10 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
+        "title": {
           "type": "Text",
           "config": {
-            "label": "Heading",
+            "label": "Title",
             "placeholder": ""
           }
         },
