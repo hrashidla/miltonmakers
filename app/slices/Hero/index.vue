@@ -9,11 +9,10 @@ defineProps(getSliceComponentProps<Content.HeroSlice>());
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="min-h-screen w-full bg-center bg-cover relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
-      <div 
-      class="bg-stone-900/30 bg-linear-to-t from-stone-900 to-stone-950 z-30 absolute top-0 py-6 bottom-0 w-full text-center lg:h-full lg:left-0 lg:top-0
-      ">
-        <h2 class="text-4xl text-black">{{ slice.primary.title }}</h2>
+    <div class="relative h-[600px] w-full flex items-center justify-center text-center bg-center bg-cover" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
+      <div class="absolute bg-black/30 w-full h-full z-10"></div>
+      <div class="text-white z-20">
+        <h1 class=" text-white">{{ slice.primary.title }}</h1>
       </div>
     </div>
   </section>

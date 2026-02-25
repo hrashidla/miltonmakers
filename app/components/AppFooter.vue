@@ -16,16 +16,10 @@ const zoom = ref(6)
       <Bounded>
         <div class="lg:flex gap-x-16 z-10 relative">  
           <div class="lg:w-1/2 lg:mb-0 pb-12" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
-            <h2 class="mb-6 text-stone-600">Interested in 
+            <h3 class="mb-6 text-stone-600">Interested in 
               <span class="block mt-4 text-4xl lg:text-5xl text-white">Joining the Space?</span>
-            </h2>
+            </h3>
             <div class="mt-2 p-2 lg:p-4 rounded-lg border border-1 border-stone-800 bg-stone-950/80">
-              <!-- <h3 class="text-white font-bold">Steve Campos</h3>
-              <div>Owner</div>
-              <div class="mb-2">Steel Fabricated Arts</div>
-              <div class="mb-2">Lincoln Heights, Los Angeles</div>
-              <div>(555)-510-7777</div>
-              <div>stevemaybecampos@gmail.com</div> -->
               <LMap
                 style="height: 300px"
                 :zoom="11"
@@ -64,8 +58,8 @@ const zoom = ref(6)
             </div>
             <div class="text-center">
               <button type="submit" 
-              class="text-2xl mx-auto buttonLink">
-              Send Now
+              class="text-2xl mx-auto buttonLink alt">
+                Send Now
               </button>
             </div>
               
