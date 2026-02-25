@@ -1,8 +1,8 @@
 {
-  "id": "hero",
+  "id": "tool_listing",
   "type": "SharedSlice",
-  "name": "Hero",
-  "description": "Hero",
+  "name": "ToolListing",
+  "description": "ToolListing",
   "variations": [
     {
       "id": "default",
@@ -19,13 +19,22 @@
             "placeholder": ""
           }
         },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,heading3"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 1600,
-              "height": 1200
+              "width": 800,
+              "height": 800
             },
             "thumbnails": []
           }

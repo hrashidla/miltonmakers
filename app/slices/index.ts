@@ -8,4 +8,5 @@ export const components = defineSliceZoneComponents({
   image_grid: defineAsyncComponent(() => import("./ImageGrid/index.vue")),
   rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
   three_columns: defineAsyncComponent(() => import("./ThreeColumns/index.vue")),
+  tool_listing: defineAsyncComponent(() => import("./ToolListing/index.vue")),
 });

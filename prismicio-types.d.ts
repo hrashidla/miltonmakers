@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type PageDocumentDataSlicesSlice =
+  | ToolListingSlice
   | ImageGridSlice
   | ThreeColumnsSlice
   | HeroSlice
@@ -506,6 +507,71 @@ export type ThreeColumnsSlice = prismic.SharedSlice<
   ThreeColumnsSliceVariation
 >;
 
+/**
+ * Primary content in *ToolListing → Default → Primary*
+ */
+export interface ToolListingSliceDefaultPrimary {
+  /**
+   * Title field in *ToolListing → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tool_listing.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *ToolListing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tool_listing.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Image field in *ToolListing → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tool_listing.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ToolListing Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ToolListingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ToolListingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ToolListing*
+ */
+type ToolListingSliceVariation = ToolListingSliceDefault;
+
+/**
+ * ToolListing Shared Slice
+ *
+ * - **API ID**: `tool_listing`
+ * - **Description**: ToolListing
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ToolListingSlice = prismic.SharedSlice<
+  "tool_listing",
+  ToolListingSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -552,6 +618,10 @@ declare module "@prismicio/client" {
       ThreeColumnsSliceDefaultPrimary,
       ThreeColumnsSliceVariation,
       ThreeColumnsSliceDefault,
+      ToolListingSlice,
+      ToolListingSliceDefaultPrimary,
+      ToolListingSliceVariation,
+      ToolListingSliceDefault,
     };
   }
 }
