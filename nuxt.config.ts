@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     //'nuxt-swiper',
     '@nuxt/icon',
     'v-gsap-nuxt',
+    '@nuxtjs/leaflet',
   ],
 
   prismic: {

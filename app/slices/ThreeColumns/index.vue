@@ -10,7 +10,7 @@ defineProps(getSliceComponentProps<Content.ThreeColumnsSlice>());
       :data-slice-type="slice.slice_type"
       :data-slice-variation="slice.variation"
     >
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 mx-auto lg:w-1/2">
         <h2>{{ slice.primary.title }}</h2>
         <p>{{ slice.primary.body }}</p>
       </div>
