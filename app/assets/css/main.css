@@ -35,7 +35,7 @@ h1{
   font-style: normal;
   text-transform:uppercase;
   font-weight:800;
-  @apply text-4xl lg:text-6xl mb-0 lg:mb-4
+  @apply text-3xl lg:text-6xl mb-0 lg:mb-4
   
 }
 h2{
@@ -44,10 +44,11 @@ h2{
   font-weight: 900;
   font-style: normal;
   text-transform:uppercase;
-  @apply text-xl lg:text-4xl mb-2 lg:mb-4
+  @apply text-2xl lg:text-4xl mb-2 lg:mb-4
 }
 h3{
-  @apply text-lg lg:text-2xl text-stone-500 mb-2 lg:mb-4
+  font-family: "Lexend", sans-serif;
+  @apply text-xl lg:text-2xl text-stone-500 mb-2 lg:mb-4
 }
 p{ 
   @apply text-base/8 lg:text-xl/10 mb-4 text-stone-400 

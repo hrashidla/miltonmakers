@@ -19,6 +19,13 @@
             "placeholder": ""
           }
         },
+        "body": {
+          "type": "Text",
+          "config": {
+            "label": "Body",
+            "placeholder": ""
+          }
+        },
         "image": {
           "type": "Image",
           "config": {

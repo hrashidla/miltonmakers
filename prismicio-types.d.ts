@@ -315,6 +315,16 @@ export interface HeroSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
+   * Body field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  body: prismic.KeyTextField;
+
+  /**
    * Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image

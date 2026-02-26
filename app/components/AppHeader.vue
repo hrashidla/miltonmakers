@@ -7,7 +7,7 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <header class="p-2 md:py-3 md:px-0">
+  <header class="p-1 md:py-3 md:px-0">
     <nav
       class="mx-auto flex max-w-6xl flex-col justify-between py-2 md:flex-row md:items-center font-medium text-white"
       aria-label="Main"
@@ -30,7 +30,7 @@ const isOpen = ref(false)
 
       <!-- Mobile Nav -->
       <div
-        class="md:hidden fixed inset-0 z-50 flex flex-col items-end bg-stone-800 pr-4 pt-6 transition-transform duration-300 ease-in-out"
+        class="md:hidden fixed inset-0 z-50 flex flex-col items-end bg-stone-800 pr-4 pt-4 transition-transform duration-300 ease-in-out"
         :class="isOpen ? 'translate-x-0' : 'translate-x-[100%]'"
       >
         <button

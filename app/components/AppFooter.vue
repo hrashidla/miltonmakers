@@ -74,7 +74,7 @@ const zoom = ref(6)
         aria-label="Footer"
       >
       <NuxtLink to="/">
-        <!-- <MMLogo /> -->
+        <MMLogoWhite />
         <span class="sr-only">{{ settings?.data.site_title }} home page</span>
       </NuxtLink>
       <ul class="lg:flex gap-6 text-center lg:text-left">

@@ -15,7 +15,7 @@ defineProps(getSliceComponentProps<Content.ToolListingSlice>());
           <PrismicImage :field="slice.primary.image" />
         </div>
         <div v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
-          <h3>{{ slice.primary.title }}</h3>
+          <h2>{{ slice.primary.title }}</h2>
           <div>
             <PrismicRichText :field="slice.primary.body" />
           </div>
