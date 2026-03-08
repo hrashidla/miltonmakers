@@ -15,7 +15,7 @@ const zoom = ref(6)
       </div> -->
       <Bounded>
         <div class="lg:flex gap-x-16 z-10 relative">  
-          <div class="lg:w-1/2 lg:mb-0 pb-12" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
+          <div class="lg:w-1/2 lg:mb-0 pb-12">
             <h3 class="mb-6 text-stone-600">Interested in 
               <span class="block mt-4 text-4xl lg:text-5xl text-white">Joining the Space?</span>
             </h3>
@@ -38,7 +38,7 @@ const zoom = ref(6)
               </LMap>
             </div>
           </div>
-          <div class="lg:w-1/2" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
+          <div class="lg:w-1/2">
           <form class="space-y-12" name="contact" method="POST" data-netlify="true" netlify>        
             <div>
               <label class="block text-sm font-medium text-stone-400">Your Name
